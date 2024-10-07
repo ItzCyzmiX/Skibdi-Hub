@@ -10,6 +10,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="sidebar-hidden dark-mode">
+  <script type="module">
+    import { Octokit, App } from "https://esm.sh/octokit";
+    const octokit = new Octokit({ auth: `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` });
+    let res = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+      owner: 'ItzCyzmiX',
+      repo: 'Skibdi-Hub',
+      path: 'assets/Skibidi-hub.png',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
+    console.log(res)
+  </script>
   <div class="container dark-mode">
     <!-- Header / Navbar -->
     <header>
@@ -141,19 +154,12 @@
       <div class="content-wrapper">
         <!-- Category List -->
         <div class="category-list">
-          <button class="category-button active">All</button>
-          <button class="category-button">Skibdi</button>
-          <button class="category-button">Ultra Skibidi</button>
-          <button class="category-button">Gooning</button>
+          <button class="category-button active">Video</button>
+          <button class="category-button">Images</button>
+          <button class="category-button">GIF</button>
+          <button class="category-button">Channels</button>
           <button class="category-button">Rizzmaxing</button>
-          <button class="category-button">Edging</button>
-          <button class="category-button">Must Edge</button>
-          <button class="category-button">Best Skibidi's</button>
-          <button class="category-button">ong this shi slaps</button>
-          <button class="category-button">carti</button>
-          <button class="category-button">balls</button>
-          <button class="category-button">saba9zo</button>
-          <button class="category-button">sigma</button>
+          <button class="category-button">Skibidi+</button>
         </div>
         
         <!-- Video List -->
